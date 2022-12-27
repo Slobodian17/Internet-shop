@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="admin" class="com.peter.nulp.rozrahunkova.model.user.User">
+        <property name="id" value="0" />
+        <property name="name" value="Admin" />
+        <property name="surname" value="Admin" />
+        <property name="login" value="admin" />
+        <property name="password" value="admin" />
+        <property name="status" value="ADMIN" />
+    </bean>
+    <bean id="alex" class="com.peter.nulp.rozrahunkova.model.user.User">
+        <property name="id" value="1" />
+        <property name="name" value="Alex" />
+        <property name="surname" value="Oliyar" />
+        <property name="login" value="alex123" />
+        <property name="password" value="alex123" />
+    </bean>
+    <bean id="user" class="com.peter.nulp.rozrahunkova.model.user.User">
+        <property name="id" value="2" />
+        <property name="name" value="User" />
+        <property name="surname" value="User" />
+        <property name="login" value="user" />
+        <property name="password" value="oop2022" />
+    </bean>
+
+
+    <bean id="users" class="com.peter.nulp.rozrahunkova.repository.user.UserRepository">
+        <property name="list">                   <!-- змінна списку в класі для якої викликається setter після ініціалізації класу-->
+            <list>                               <!-- список об'єктів які ми передаємо в setter-->
+                <ref bean="admin"/>
+                <ref bean="alex"/>
+                <ref bean="user"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="product1" class="com.peter.nulp.rozrahunkova.model.product.Product">
+        <property name="id" value="0" />
+        <property name="title" value="TV"/>
+        <property name="description" value="TV Samsung"/>
+        <property name="cost" value="100" />
+    </bean>
+    <bean id="product2" class="com.peter.nulp.rozrahunkova.model.product.Product">
+        <property name="id" value="1" />
+        <property name="title" value="Iphone"/>
+        <property name="description" value="new Iphone 13 pro midnight grey"/>
+        <property name="cost" value="1000" />
+    </bean>
+    <bean id="product3" class="com.peter.nulp.rozrahunkova.model.product.Product">
+        <property name="id" value="2" />
+        <property name="title" value="PC"/>
+        <property name="description" value="Intel i7, 16GB RAM, 1 Tb, RTX 3080"/>
+        <property name="cost" value="3000" />
+    </bean>
+    <bean id="product4" class="com.peter.nulp.rozrahunkova.model.product.Product">
+        <property name="id" value="3" />
+        <property name="title" value="Wash machine"/>
+        <property name="description" value="description"/>
+        <property name="cost" value="5000" />
+    </bean>
+    <bean id="product5" class="com.peter.nulp.rozrahunkova.model.product.Product">
+        <property name="id" value="4" />
+        <property name="title" value="Ipad"/>
+        <property name="description" value="Product best description"/>
+        <property name="cost" value="10000" />
+    </bean>
+    <bean id="product6" class="com.peter.nulp.rozrahunkova.model.product.Product">
+        <property name="id" value="5" />
+        <property name="title" value="Mercedes"/>
+        <property name="description" value="Product best description"/>
+        <property name="cost" value="100000" />
+    </bean>
+    <bean id="product7" class="com.peter.nulp.rozrahunkova.model.product.Product">
+        <property name="id" value="6" />
+        <property name="title" value="F-22 raptor"/>
+        <property name="description" value = "F-22 Raptor is an American tactical fighter aircraft."/>
+        <property name="cost" value="10000000" />
+    </bean>
+    <bean id="products" class="com.peter.nulp.rozrahunkova.repository.product.ProductRepository">
+        <property name="list">                   <!-- змінна списку в класі для якої викликається setter після ініціалізації класу-->
+            <list>                               <!-- список об'єктів які ми передаємо в setter-->
+                <ref bean="product1"/>
+                <ref bean="product2"/>
+                <ref bean="product3"/>
+                <ref bean="product4"/>
+                <ref bean="product5"/>
+                <ref bean="product6"/>
+                <ref bean="product7"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
